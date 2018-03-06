@@ -1,0 +1,19 @@
+.threeProduct{
+    float: left;
+    padding-right: 20px;
+}
+
+.productsWrapper{
+    margin: 300px auto;
+    display: inline-block;
+    
+}
+
+.debug{
+
+    border: 1px solid red;
+}    
+
+app-product:last-child {
+    padding-right: 0px;
+} 

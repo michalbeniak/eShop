@@ -1,0 +1,39 @@
+<div class="cartDetail">
+
+  <div class="beforePart">
+    <p class="title">My Cart({{cart.count}})</p>
+    <div class="rightMenu">
+        <p class="price">Price</p>
+        <p class="quantity">Quantity</p>
+        <p class="total">Total</p>    
+    </div>
+  </div>
+  <app-product-cart *ngFor="let item of products" [product]="item" (pleaseDeleteMeEvent)="deleteHandler()"></app-product-cart>
+
+
+  <div class="afterPart">
+    <div class="left">
+      <p class="promo"><a href="">Enter promo code</a></p> 
+      <p class="note"><a href="">Add a note</a></p>  
+    </div>
+    <div class="right">
+      <table class="table">
+        <tr>
+          <td>Subtotal</td>
+          <td>{{cartService.totalAmmount}}$</td>
+        </tr>
+        <tr class="last">
+          <td >Shipping</td>
+          <td>free</td>
+        </tr>
+        <tr class="totalTable">
+          <td>Total</td>
+          <td>{{cartService.totalAmmount}}$</td>
+        </tr>
+      </table>
+      <button (click)= "this.cartService.setCheckoutStage()" class="button">CHECKOUT</button>
+    </div>
+  </div>
+  
+
+</div>

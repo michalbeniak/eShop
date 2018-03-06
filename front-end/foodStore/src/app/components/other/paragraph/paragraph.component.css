@@ -1,0 +1,33 @@
+.title {
+    text-align: left;
+}
+
+.subtitle {
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 15px;
+    font-size: 20px;
+}
+.title span {
+    padding-left: 60px;
+    padding-top: 20px;
+    display: inline-block;
+    font-size: 26px;
+}
+.description {
+    text-align: right;
+    font-size: 16px;
+}
+
+.description span {
+    padding-right:120px;
+    padding-top: 50px;
+    display: inline-block;
+}
+
+.paragraph {
+    color: #000000b8;
+    height: 170px;
+    width: 800px;
+    margin: 30px auto;
+}

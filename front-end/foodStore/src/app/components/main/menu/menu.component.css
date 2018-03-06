@@ -1,0 +1,56 @@
+.menu {
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    font-size: 15px;
+
+}
+
+.menu ul{
+    display: inline;
+    list-style-type: none;
+    padding-left: 160px;
+}
+.menu li {
+    display: inline;
+    padding-right: 60px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000000b8;
+    text-transform: uppercase;
+    transition: all 0.15s linear;
+}
+
+.menu a:hover {
+    color:#b3b3b3;
+    border-bottom: 1px solid #b3b3b3;
+    padding-bottom: 3px;
+
+}
+
+
+
+
+.myCartWrapper {
+
+}
+
+.last {
+    padding-right:80px!important;
+}
+
+.logo {
+    height: 100px;
+    position: absolute;
+    top: -45px;
+    left: 33px;
+}
+
+.imageWrapper {
+    position: relative;
+    float: left;
+}

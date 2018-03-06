@@ -1,0 +1,17 @@
+.footer {
+    background: #75736a;
+    width: 800px;
+    margin: 60px auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+
+.footer li {
+    display:inline-block;
+    padding-right:20px;
+}
+
+.footer li img {
+    height: 40px;
+}

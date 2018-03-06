@@ -1,0 +1,15 @@
+
+<div  (mouseenter)="showButton($event.currentTarget)" (mouseleave)="hideButton($event.currentTarget)"class="product">
+  <div>
+    <img class="image" src="/{{product.ImagePath}}" alt="">
+    <div class="btnWrapper {{btnClass}}">
+      <button routerLink="/product/{{product.Guid}}" routerLinkActive="active" class="btn">VIEW DETAIL</button>
+    </div>
+  </div>
+
+
+  <div class="info">
+    <p class="title">{{product.Name}}</p>
+    <p class="price">{{product.Price}} $</p>
+  </div>
+</div>

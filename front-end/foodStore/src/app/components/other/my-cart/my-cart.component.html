@@ -1,0 +1,44 @@
+<a class="masterHref" (click)="showCart()">
+  <div class= "myCart">
+    <div>
+        <p class="itemNumb">{{cart.count}}</p>
+        <div class="iconIm"></div>
+        <!--<img class="icon" src="https://png.icons8.com/android/50/ffffff/shopping-cart.png">-->
+        <!--<img src="https://png.icons8.com/android/50/000000/shopping-cart.png">-->
+        
+    </div>
+
+    <p class = "iconTitle">
+      My Cart
+    </p> 
+  </div>
+</a>
+<div class="wrapper" (click)="closeCart()" *ngIf="myCartOn;">
+    <div  class="cartDiv">
+
+    
+      <div class="title"><span>Cart</span></div>
+      <i class="icon"></i>
+      <span class="close" (click)="closeCart()"></span> 
+      <div class= "priceWrapper">
+        <table class="table">
+          <tr>
+            <td>Name</td>
+            <td>Quantity</td>
+            <td>Price</td>
+          </tr>
+          <tr *ngFor="let item of cart.productArray">
+            <td>{{item.Name}}</td>
+            <td>{{item.Quantity}}</td>
+            <td>{{item.Price}}</td>
+          </tr>
+        </table>
+        <div class="price">
+            <div>Subtotal</div> 
+            <div>{{cartService.getTotalAmmount()}}$</div>  
+        </div>  
+      </div>
+      <div class="viewCart"><a routerLink="/cart" routerLinkActive="active"> VIEW CART </a></div>
+      </div>
+</div>
+

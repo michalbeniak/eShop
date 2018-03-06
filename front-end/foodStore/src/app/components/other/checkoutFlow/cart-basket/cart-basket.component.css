@@ -1,0 +1,121 @@
+.cartDetail {
+    width: 800px;
+    margin: 90px auto;
+    position: relative;
+    color: #0000009e;
+
+}
+
+.beforePart {
+    position: relative;
+    height: 58px;
+    border-bottom: 1px solid #1C7769;
+}
+.beforePart p{
+    display:inline-block;
+    padding-right:100px;
+}
+
+.title {
+    position: absolute;
+    left:0px;
+    padding-left:60px;
+    font-size:20px;
+}
+
+.rightMenu{
+    position: absolute;
+    right: -70px;
+    font-size: 16px;
+    padding-top: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.left {
+    float: left;
+    padding-left: 60px;
+    text-align: left;
+}
+
+.right {
+    display:inline-block;
+    position: absolute;
+    right: 60px;
+    width: 300px;
+    margin-top: 1em;
+}
+
+.afterPart {
+    display: block;
+    height: 270px;
+    position:relative;
+    display: flex;
+}
+
+.button{
+    border: 1px solid #75736a;
+    margin: 0px auto;
+    padding: 5px 0px 5px 0px;
+    width: 70%;
+    height: 34px;
+    background-color: #75736a;
+    color: white;
+    font-size: 18px;
+}
+
+.button a:hover {
+    opacity: 1;
+    cursor: pointer;
+    color:black
+}
+
+.button a {
+    text-decoration:none;
+    color:white;
+}
+
+.table {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.table tr td:first-child {
+    text-align: left;
+    font-size: 14px;
+}
+
+.table tr td:last-child {
+    text-align: right;
+    font-size: 14px;
+}
+
+.table tr>td {
+    padding-bottom:30px;
+}
+
+.totalTable td {
+    font-size:22px!important;
+}
+
+.totalTable td{
+    padding-top:10px;
+}
+
+
+.last td{
+    border-bottom: 1px solid;
+}
+
+
+.promo a, .note a {
+    font-size: 14px;
+}

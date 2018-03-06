@@ -1,0 +1,42 @@
+.contact {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.contact img {
+    width: 50px;
+}
+
+
+.title {
+    color: #1C7769;
+    font-size: 40px;
+    margin-top:100px;
+}
+
+.small{
+    font-size:14px;
+}
+.ourStore {
+    color: #00000091;
+    width: 399px;
+    border-right: 1px solid #00000091;;
+    float: left;
+}
+
+.openingHours {
+    color: #00000091;
+    width:400px;
+    display: inline-block;
+}
+
+.wrapper {
+    margin-top: 100px;
+    overflow: auto;
+}
+
+.subtitle {
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}

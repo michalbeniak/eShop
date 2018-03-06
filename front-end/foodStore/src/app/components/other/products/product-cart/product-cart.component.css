@@ -1,0 +1,57 @@
+.cartProduct { 
+    width: 800px;
+    margin: 5px auto;
+    display: inline-block;
+    border-bottom: 1px solid;
+    padding-bottom: 13px;
+}
+
+.image {
+    height: 200px;
+    float: left;
+    padding-left: 40px;
+}
+
+.remove {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+.productDetails {
+    display: inline-block;
+    float: left;
+    padding-left: 45px;
+}
+
+.productDetails p {
+    text-align: left;
+    font-size: 14px;
+}
+.productDetails a {
+    font-size: 14px;
+}
+
+.productTitle {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.rightValues {
+    display: inline-block;
+    font-size: 14px;
+    padding-left: 55px;
+}
+
+.rightValues p{
+    display: inline-block;
+    padding-right: 70px;
+    padding-left: 50px;
+}
+
+.rightValues input {
+    width: 25px;
+}
+
+.totalValue {
+    padding-right: 30px!important;
+}

@@ -1,0 +1,81 @@
+<div class="summary">
+  <div>
+    <h3>Cart Summary</h3>
+    <table class="cartTable">
+      <tr>
+        <td><h4><span>Name</span> </h4></td>
+        <td><h4>Quantity</h4></td>
+        <td><h4>Price</h4></td>
+        <td><h4>Total</h4></td>
+      </tr>
+      <tr *ngFor="let item of repo.productArray">
+        <td><a routerLink="/product/{{item.Guid}}" routerLinkActive="active">{{item.Name}}</a></td>
+        <td>{{item.Quantity}}</td>
+        <td>{{item.Price}}</td>
+        <td>{{item.Price*item.Quantity}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="shipAddress">
+     <h3>Shipping Address</h3>
+     <div class="details">
+       <table class="detailsTable">
+         <tr>
+           <td>Name :</td>
+           <td>{{cartService.contactDetails.FirstName}} {{cartService.contactDetails.LastName}}</td>
+         </tr>
+         <tr>
+            <td>Email :</td>
+            <td>{{cartService.contactDetails.Email}}</td>
+          </tr>
+          <tr>
+            <td>Mobile Number :</td>
+            <td>{{cartService.contactDetails.NumberTel}}</td>
+          </tr>
+          <tr>
+            <td>Street, Number :</td>
+            <td>{{cartService.contactDetails.Street}},{{cartService.contactDetails.NumberHouse}}</td>
+          </tr>
+          <tr>
+            <td>City :</td>
+            <td>{{cartService.contactDetails.City}}</td>
+          </tr>
+          <tr>
+            <td>Zip Code :</td>
+            <td>{{cartService.contactDetails.ZipCode}}</td>
+          </tr>
+          <tr>
+              <td>Country :</td>
+              <td>{{cartService.contactDetails.Country}}</td>
+            </tr>          
+       </table>
+     </div>
+  </div>
+  <div class="shipMethod">
+      <h3>Shipping Method</h3>
+      <div class="shipDetails">
+          <p><strong>1 SHIPMENT</strong></p>
+          <p>Shipment 1: standard (1-3 weeks)</p>
+          <p>Ships in 1-5 bussiness bay.additional processing time required.</p>
+      </div>
+
+  </div>
+
+  <div class="paymentInfo">
+    <h3>Payment Info</h3>
+    <div class="paymentDetails">
+        <p>Secure Payment info</p>
+    </div>
+
+  </div>
+  <div class="total">
+    <h3>Total</h3>
+    <p>{{cartService.getTotalAmmount()}}$</p>
+  </div>
+  <div class="btnWrapper">
+      <button (click)= "cartService.setCheckoutStage()" class="button backBtn">BACK</button>
+      <button (click)= "cartService.setPaymentStage()" class="button nextBtn">ORDER AND PAY</button>
+  </div>
+
+</div>

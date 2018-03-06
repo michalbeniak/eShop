@@ -1,0 +1,36 @@
+.questionTitle {
+    font-size: 24px;
+    position: relative;
+}
+
+.questionAnswer {
+    font-size: 16px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    color:#00000052;
+}
+
+.pipe {
+    text-align: right;
+    position: absolute;
+    right: 0px;
+}
+
+
+.question {
+    margin-top: 10px;
+    border-bottom: 1px solid #00000052;
+    cursor:pointer;
+}
+
+.active {
+    opacity: 1;
+    transition: all 0.5s;
+    height:70px;
+}
+
+.notActive {
+    opacity: 0;
+    transition: height 0.4s, opacity 0.13s;
+    height:0;
+}

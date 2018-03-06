@@ -1,0 +1,166 @@
+.myCart {
+    width: 100px;
+    display: block;
+    position: absolute;
+    right: 0px;
+    background: #1C7769;
+    text-transform: uppercase;
+    /* padding-top: 10px; */
+    bottom: -25px;
+    transition: all 0.15s linear;
+    padding-bottom: 10px;
+}
+
+.myCart a {
+    color:white;
+}
+
+.myCart a:hover {
+    color:#666666;
+    font-weight: bold;
+}
+
+.myCart:hover {
+    background: white;
+    cursor: pointer;
+
+}
+
+.masterHref {
+    color:white;
+}
+
+.masterHref :hover {
+    color:#666666;
+    font-weight: bold;
+}
+
+
+.cartDiv {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    height: 400px;
+    width: 300px;
+    background: aliceblue;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    opacity: 0.5;
+}
+.close::before {
+    content:"\2716";
+    color: white;
+    cursor: pointer;
+}
+
+.viewCart{
+    border: 1px solid #75736a;
+    margin: 0px auto;
+    padding: 5px 0px 5px 0px;
+    width: 70%;
+    height: 30px;
+    background-color: #75736a;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.viewCart a:hover {
+    opacity: 1;
+    cursor: pointer;
+    color:black
+}
+
+.viewCart a {
+    text-decoration:none;
+    color:white;
+}
+.wrapper{
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.438);
+    z-index: 1;
+}
+.priceWrapper {
+    height: 60%;
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.price {
+    position: absolute;
+    bottom: 0px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.title {
+    font-size: 34px;
+    position: relative;
+    color: white;
+    height: 65px;
+    background-color: #1C7769;
+}
+
+.title span{
+    padding-top:10px;
+    display:block;
+}
+
+.icon {
+    width:35px;
+}
+
+.iconTitle {
+    margin: 0;
+    padding-top: 5px;
+}
+
+.itemNumb {
+    margin: 0;
+    position: relative;
+    bottom: -10px;
+    left: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.iconIm {
+    background: url(https://png.icons8.com/android/50/ffffff/shopping-cart.png);
+    width: 27px;
+    height: 27px;
+    background-size: contain;
+    margin: 0 auto;
+}
+
+
+.masterHref :hover .iconIm {
+    background:url("https://png.icons8.com/android/50/666666/shopping-cart.png");
+    width: 27px;
+    height: 27px;
+    background-size: contain;
+    margin: 0 auto;
+    color: #666666;
+}
+
+.table {
+    border-spacing: 17px 10px;
+}

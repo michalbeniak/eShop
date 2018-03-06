@@ -1,0 +1,12 @@
+.backgroundImage {
+    transition: all 0.2s linear;
+    width: 800px;
+    height: 480px;
+    
+    margin: 0 auto;
+}
+
+.increaseHeight {
+    height:120px;
+}
+

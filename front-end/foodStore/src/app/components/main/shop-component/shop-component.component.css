@@ -1,0 +1,43 @@
+.shop {
+    width:800px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.title {
+    font-size:42px;
+    margin-bottom: 100px;
+    color:#1C7769;
+}
+
+.selectWrapper {
+    text-align: right;
+    margin-bottom: 30px;
+    margin-right: 110px;
+}
+
+.select {
+    height: 35px;
+    font-size: 17px;
+    padding: 7px;
+    width: 157px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline:none;
+ }
+
+ select::-ms-expand { /* for IE 11 */
+    display: none;
+}
+
+select option :hover {
+    background-color: white;
+}
+
+select:focus {
+    outline:none;
+}

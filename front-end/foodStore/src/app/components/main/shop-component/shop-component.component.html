@@ -1,0 +1,21 @@
+<div class="shop">
+  <p class="title">OUR COLLECTION</p>
+  <div class="container">
+    <div class="selectWrapper">
+        <select class="select" (change)="onChange($event)">
+            <option value="sortby">Sort by</option>
+            <option value="newest">Newest</option>
+            <option value="priceLowHigh">Price (low to high)</option>
+            <option value="priceHighLow">Price (high to low)</option>
+            <option value="nameAz">Name A-Z</option>  
+            <option value="nameZa">Name Z-A</option>  
+        </select>
+    </div>
+    <div class="productsWrapper">
+        <app-product-shop  *ngFor="let item of productList.ProductsList" [product] = "item"></app-product-shop>
+    </div>
+    
+  </div>
+  
+      
+</div>

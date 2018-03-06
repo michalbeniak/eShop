@@ -1,0 +1,15 @@
+<div *ngIf="this.cartService.state.Status == 'basket'">
+  <app-cart-basket></app-cart-basket>
+</div>
+  
+<div *ngIf="this.cartService.state.Status == 'checkout'">
+  <app-checkout></app-checkout>
+</div>
+
+<div *ngIf="this.cartService.state.Status == 'summary'">
+  <app-summary></app-summary>
+</div>
+
+<div *ngIf="this.cartService.state.Status == 'payment'">
+    <app-payment></app-payment>
+  </div>

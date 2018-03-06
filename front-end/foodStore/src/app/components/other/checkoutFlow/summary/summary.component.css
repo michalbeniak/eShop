@@ -1,0 +1,89 @@
+.summary{
+    width:600px;   
+    margin:0 auto;
+    text-align: left;
+    margin-top: 100px;
+}
+
+.cartTable td {
+    margin: 10px 0px 5px 0px;
+    display: inline-block;
+    text-align: center;
+    width: 147px;
+}
+
+.shipAddress {
+    margin-top: 70px;
+}
+
+.detailsTable {
+    margin: 50px auto;
+}
+
+.detailsTable td {
+    margin: 10px 0px 5px 0px;
+    display: inline-block;
+    width: 186px;
+}
+
+.shipMethod {
+    margin-top: 70px;
+}
+
+.shipDetails {
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.paymentInfo{
+    margin-top: 70px;
+}
+
+.paymentDetails {
+    margin-left: 50px;
+}
+
+
+.total {
+    text-align: right;  
+    border-top: 1px solid;
+    margin-top: 40px;
+}
+
+.btnWrapper {
+    position: relative;
+    height: 50px;
+    padding-top: 40px;
+}
+.button {
+    height:50px;
+    width:100px;
+    font-size: 18px;
+    border: none;
+    cursor:pointer;
+}
+
+.backBtn {
+    float: left;
+    font-family: "open sans";
+    color: white;
+    background: #484848;
+}
+.backBtn:hover{
+    color:black;
+    background:#1c7769;
+}
+
+
+.nextBtn {
+    position: absolute;
+    right: 0px;
+    display: inline-block;
+    display: block;
+    background: #1c7769;
+    color: white;
+    height: 50px;
+    width: 100px;
+    font-size: 18px;
+}

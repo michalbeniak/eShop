@@ -1,0 +1,67 @@
+.product {
+    width:200px;
+    display: inline-block;
+    position: relative;
+    width: 160px;
+    margin-right: 20px;
+    background: rgb(193, 195, 255);
+    padding: 10px 10px 0px 10px;
+}
+
+
+.image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.btnHidden {
+    opacity: 0; 
+}
+
+.btnShow {
+    display: block;
+    opacity: 1;    
+    transition: all 0.4s ease-out;
+
+}
+
+.btn {
+    width: inherit;
+    height: 35px;
+    cursor: pointer;
+    background-color: #75736a;
+    color: white;
+    border: none;
+}
+
+.btnWrapper {
+    position: absolute;
+    width: 160px!important;
+    bottom: 50px;;
+    width: 100%;
+
+}
+
+.btnWrapper :hover {
+    transition: all 2s ease-out;
+}
+
+.info {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 16px;
+    padding-bottom: 5px;
+
+}
+
+.price {
+    font-size:14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

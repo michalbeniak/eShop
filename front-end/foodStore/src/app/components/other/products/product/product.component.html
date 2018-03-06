@@ -1,0 +1,14 @@
+<div>
+  <a routerLink="/product/{{product.Guid}}" routerLinkActive="active">
+      <div class="productWrapper">
+          <div (mouseover)="setBackgroundOnProductHover($event)" >
+              <img class="image" src="/{{product.ImagePath}}" alt="">
+              <div class="nameOfProduct">{{product.Name}}</div>
+              <div class="price">{{product.Price}} $</div>
+             <!-- <div class="viewDetails">
+                  <div class="button">DETAILS</div>
+              </div>  -->
+          </div>   
+        </div>
+  </a>
+</div>
