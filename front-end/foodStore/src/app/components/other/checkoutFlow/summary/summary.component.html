@@ -8,7 +8,7 @@
         <td><h4>Price</h4></td>
         <td><h4>Total</h4></td>
       </tr>
-      <tr *ngFor="let item of repo.productArray">
+      <tr *ngFor="let item of repo.productArray.ProductsList">
         <td><a routerLink="/product/{{item.Guid}}" routerLinkActive="active">{{item.Name}}</a></td>
         <td>{{item.Quantity}}</td>
         <td>{{item.Price}}</td>
@@ -75,7 +75,7 @@
   </div>
   <div class="btnWrapper">
       <button (click)= "cartService.setCheckoutStage()" class="button backBtn">BACK</button>
-      <button (click)= "cartService.setPaymentStage()" class="button nextBtn">ORDER AND PAY</button>
+      <button (click)= "cartService.setPaymentStage()" (click)= "saveOrder()" class="button nextBtn">ORDER AND PAY</button>
   </div>
 
 </div>

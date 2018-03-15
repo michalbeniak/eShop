@@ -49,7 +49,7 @@ export class ProductDetailComponentComponent implements OnInit {
   }
 
   isAddedAlready(productToAdd:Product) {
-    for ( let product of this.cart.productArray){
+    for ( let product of this.cart.productArray.ProductsList){
       if (product.Guid ==  productToAdd.Guid){
         return true;
       }
@@ -58,7 +58,7 @@ export class ProductDetailComponentComponent implements OnInit {
   }
 
   setQuantity(productToAdd:Product) {
-    for ( let product of this.cart.productArray){
+    for ( let product of this.cart.productArray.ProductsList){
       if (product.Guid ==  productToAdd.Guid){    
         product.Quantity += +this.quantity;
 

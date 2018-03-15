@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Product } from '../../models/product';
 import { ProductsList } from '../../models/products-list';
 import { ProductComponent } from '../../components/other/products/product/product.component';
@@ -46,4 +46,18 @@ export class CommunicatorService {
         shopComponent.productList = new ProductsList(JSON.parse(JSON.stringify(data)));
     });
   }
+
+  saveOrder(contactDetails, productArray) {
+    let contactDetailsJson = JSON.parse(JSON.stringify(contactDetails));
+    let productArrayJson =JSON.parse(JSON.stringify(productArray))
+    let order ={
+      "contactDetails":contactDetailsJson,
+      "productsArray":productArrayJson
+    };
+
+    const myheader = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    const body = new HttpParams().set('order', JSON.stringify(order));
+    this.http
+      .post('http://localhost:49649/Product/SaveOrder', body, { headers: myheader}).subscribe();   
+      }
 }

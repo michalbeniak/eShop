@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../models/product';
+import { ProductsList } from '../../models/products-list';
 
 @Injectable()
 export class CartService {
 
-  productArray =  Array<Product>();
+  //productArray =  Array<Product>();
+  array:object[];
+  productArray =  new ProductsList(this.array);
   count = 0;
   constructor() { }
 

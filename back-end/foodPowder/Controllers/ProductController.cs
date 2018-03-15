@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using foodPowder.Interfaces;
-
+using Newtonsoft;
+using foodPowder.Models;
 
 namespace foodPowder.Controllers
 {
+
+
     public class ProductController : Controller
     {
 
@@ -35,6 +39,15 @@ namespace foodPowder.Controllers
         public ActionResult GetAllProducts()
         {
             return Json(productProvider.GetAllProducts(), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public void SaveOrder(string order)
+        {
+            var orderObj=Newtonsoft.Json.JsonConvert.DeserializeObject<Order>(order);
+
+            Console.WriteLine(order);
+            Console.WriteLine("JIHAA");
         }
     }
 }

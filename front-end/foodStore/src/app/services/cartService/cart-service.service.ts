@@ -19,7 +19,7 @@ export class CartServiceService {
 
   getTotalAmmount() {
     let sum =0;
-    this.cart.productArray.forEach(element => { sum+= element.Price * element.Quantity   
+    this.cart.productArray.ProductsList.forEach(element => { sum+= element.Price * element.Quantity   
     });
     this.totalAmmount = this.precisionRound(sum, 2);
     return this.precisionRound(sum,2);
@@ -28,16 +28,16 @@ export class CartServiceService {
 
   deleteFromCart(product:Product){
  
-    var indexToDelete = this.cart.productArray.indexOf(product, 0);
+    var indexToDelete = this.cart.productArray.ProductsList.indexOf(product, 0);
     this.cart.count -= this.cart.productArray[indexToDelete].Quantity;
     if (indexToDelete >= 0){
-        this.cart.productArray.splice(indexToDelete, 1);
+        this.cart.productArray.ProductsList.splice(indexToDelete, 1);
     }
    
   }
 
   addToCart(product:Product ) {
-    this.cart.productArray.push(product);
+    this.cart.productArray.ProductsList.push(product);
   }
 
   precisionRound(number, precision) {

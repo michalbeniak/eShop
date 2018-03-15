@@ -14,7 +14,7 @@ export class CartBasketComponent implements OnInit {
   constructor(private cart:CartService, private cartService:CartServiceService) { }
 
   ngOnInit() {
-    this.products = this.cart.productArray;
+    this.products = this.cart.productArray.ProductsList;
     this.cartService.getTotalAmmount();
   }
 

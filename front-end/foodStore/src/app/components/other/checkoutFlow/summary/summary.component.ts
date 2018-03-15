@@ -3,6 +3,7 @@ import { CartServiceService } from '../../../../services/cartService/cart-servic
 import { CartService } from '../../../../services/storeService/cart.service';
 import { Product } from '../../../../models/product';
 import { ContactDetails } from '../../../../models/contact-details';
+import { CommunicatorService } from '../../../../services/communicator/communicator.service';
 
 @Component({
   selector: 'app-summary',
@@ -11,7 +12,7 @@ import { ContactDetails } from '../../../../models/contact-details';
 })
 export class SummaryComponent implements OnInit {
 
-  constructor(private cartService:CartServiceService, private repo:CartService) { }
+  constructor(private cartService:CartServiceService, private repo:CartService, private communicator:CommunicatorService) { }
 
   ngOnInit() {
 
@@ -28,6 +29,9 @@ export class SummaryComponent implements OnInit {
     
   }
 
+  saveOrder(){
 
+    this.communicator.saveOrder(this.cartService.contactDetails, this.repo.productArray);
+  }
 
 }
