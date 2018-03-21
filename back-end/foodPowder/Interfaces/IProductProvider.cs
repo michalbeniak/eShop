@@ -11,5 +11,6 @@ namespace foodPowder.Interfaces
         Product GetProductById(string id);
         List<Product> GetFirstThreeProducts();
         List<Product> GetAllProducts();
+        void SaveOrder(Order order);
     }
 }

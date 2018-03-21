@@ -44,8 +44,8 @@ namespace foodPowder.Controllers
         [HttpPost]
         public void SaveOrder(string order)
         {
-            var orderObj=Newtonsoft.Json.JsonConvert.DeserializeObject<Order>(order);
-
+            Order orderObj=Newtonsoft.Json.JsonConvert.DeserializeObject<Order>(order);
+            productProvider.SaveOrder(orderObj);
             Console.WriteLine(order);
             Console.WriteLine("JIHAA");
         }

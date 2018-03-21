@@ -13,12 +13,13 @@ namespace foodPowder.Providers
     public class ProductProvider: IProductProvider
     {
         public DataTable productTable = new DataTable();
+        private string connectionString = ConfigurationManager.ConnectionStrings["meatPowder"].ConnectionString;
 
         public ProductProvider()
         {
-            string constr = ConfigurationManager.ConnectionStrings["meatPowder"].ConnectionString;
+            //string constr = ConfigurationManager.ConnectionStrings["meatPowder"].ConnectionString; 
 
-            using (MySqlConnection connection = new MySqlConnection(constr))
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 using (MySqlCommand command = new MySqlCommand("SELECT * FROM meatPowder.product"))
                 {
@@ -57,6 +58,44 @@ namespace foodPowder.Providers
             return result;
 
         }
+        public void SaveOrder(Order order)
+        {
+            Guid orderGuid = Guid.NewGuid();
+
+            string insertContactCommand = string.Format("INSERT INTO meatpowder.orders(" +
+                            "FirstName, LastName, Email, NumberTel, Street, " +
+                            "NumberHouse, City, ZipCode, Country, OrderID, Total) " +
+                    "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}');",
+                    order.contactDetails.FirstName,
+                    order.contactDetails.LastName,
+                    order.contactDetails.Email,
+                    order.contactDetails.NumberTel,
+                    order.contactDetails.Street,
+                    order.contactDetails.NumberHouse,
+                    order.contactDetails.City,
+                    order.contactDetails.ZipCode,
+                    order.contactDetails.Country,
+                    orderGuid.ToString(),
+                    order.productsArray.GetTotal());
+
+
+            string insertOrdersCommand = "INSERT INTO meatpowder.orders_product(ProductName, ProductGuid, OrderGuid, Price, Quantity) VALUES " + GetProductInsertCommand(order.productsArray, orderGuid);
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                using (MySqlCommand command = new MySqlCommand(insertContactCommand, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+                using (MySqlCommand command2 = new MySqlCommand(insertOrdersCommand, connection))
+                {
+                    command2.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+
+        }
 
         public List<Product> GetAllProducts()
         {
@@ -69,6 +108,17 @@ namespace foodPowder.Providers
             }
             return result;
 
+        }
+
+        public string GetProductInsertCommand(ProductsArray products, Guid orderGuid) {
+            string res = "";
+            foreach (Product product in products.ProductsList) {
+                res += string.Format("('{0}', '{1}', '{2}', '{3}', '{4}')", product.Name, product.Guid, orderGuid.ToString(), product.Price.ToString().Replace(",","."), product.Quantity);
+                if (products.ProductsList.IndexOf(product) != (products.ProductsList.Count -1)) {
+                    res += ",";
+                }
+            }
+            return res;
         }
     }
 
