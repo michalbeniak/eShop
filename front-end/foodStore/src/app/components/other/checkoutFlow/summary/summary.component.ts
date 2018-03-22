@@ -33,5 +33,9 @@ export class SummaryComponent implements OnInit {
 
     this.communicator.saveOrder(this.cartService.contactDetails, this.repo.productArray);
   }
+  goToShippingStage(){
+    this.cartService.setShippingStage();
+  }
+
 
 }

@@ -74,7 +74,7 @@
     <p>{{cartService.getTotalAmmount()}}$</p>
   </div>
   <div class="btnWrapper">
-      <button (click)= "cartService.setCheckoutStage()" class="button backBtn">BACK</button>
+      <button (click)= "goToShippingStage()" class="button backBtn">BACK</button>
       <button (click)= "cartService.setPaymentStage()" (click)= "saveOrder()" class="button nextBtn">ORDER AND PAY</button>
   </div>
 

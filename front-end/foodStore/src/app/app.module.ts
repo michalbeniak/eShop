@@ -34,6 +34,7 @@ import { CheckoutComponent } from './components/other/checkoutFlow/checkout/chec
 import { CartBasketComponent } from './components/other/checkoutFlow/cart-basket/cart-basket.component';
 import { SummaryComponent } from './components/other/checkoutFlow/summary/summary.component';
 import { PaymentComponent } from './components/other/checkoutFlow/payment/payment.component';
+import { ShippingComponent } from './components/other/checkoutFlow/shipping/shipping.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponentComponent },
@@ -73,7 +74,8 @@ const appRoutes: Routes = [
     CheckoutComponent,
     CartBasketComponent,
     SummaryComponent,
-    PaymentComponent
+    PaymentComponent,
+    ShippingComponent
     
     
   ],

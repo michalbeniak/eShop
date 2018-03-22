@@ -1,0 +1,41 @@
+<div class="shipping">
+  <p class="title">Shipping</p>
+
+  <div class="options">
+      <p class="subtitle">Free</p>
+      <div class="checkbox">
+          <label class="container"> <span>Australian Standard delivery</span> 
+              <input id="standard" type="checkbox" checked="checked" (change)="clearOthers($event, 'standard')">
+              <span class="checkmark"></span>
+          </label>
+      </div>
+
+      <div class="checkbox">
+          <label class="container">Store pick-up
+              <input id="store" type="checkbox" checked="checked" (change)="clearOthers($event, 'store')">
+              <span class="checkmark"></span>
+          </label>
+      </div>
+
+      <p class="subtitle">Faster</p>
+      <div class="checkbox">
+          <label class="container">Next day delivery 10AUD
+              <input id="next"  type="checkbox" checked="checked" (change)="clearOthers($event, 'next')">
+              <span class="checkmark"></span>
+          </label>
+      </div>
+
+      <div class="checkbox">
+          <label class="container">Choose your delivery day 10AUD
+              <input id="specific"  type="checkbox" checked="checked" (change)="clearOthers($event, 'specific')">
+              <span class="checkmark"></span>
+          </label>
+      </div>
+  </div>
+
+  <div class="btnWrapper">
+      <button (click)= "cartService.setCheckoutStage()" class="button backBtn">BACK</button>
+      <button (click)= "setSummaryStage()" (click)= "setShipping()"  class="button nextBtn">SUMMARY</button>
+  </div>
+
+</div>

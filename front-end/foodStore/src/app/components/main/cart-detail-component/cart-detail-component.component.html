@@ -13,3 +13,7 @@
 <div *ngIf="this.cartService.state.Status == 'payment'">
     <app-payment></app-payment>
   </div>
+
+  <div *ngIf="this.cartService.state.Status == 'shipping'">
+      <app-shipping></app-shipping>
+    </div>

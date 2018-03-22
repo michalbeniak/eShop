@@ -7,11 +7,10 @@ import { ContactDetails } from '../../models/contact-details';
 
 @Injectable()
 export class CartServiceService {
-  
   contactDetails:ContactDetails = new ContactDetails("","","","","","","","","")
   shippingContactDetails:ContactDetails = new ContactDetails("","","","","","","","","")
   totalAmmount:number=0;
-  state:State = new State("basket");
+  state:State = new State("shipping");
   constructor(private cart: CartService) { }
 
   ngOnInit() {
@@ -55,6 +54,9 @@ export class CartServiceService {
   setSummaryStage(){
     this.state.Status = "summary";
   }
+  setShippingStage(){
+    this.state.Status = "shipping";
+  }
   setPaymentStage(){
     this.state.Status = "payment";
   }
@@ -64,7 +66,11 @@ export class CartServiceService {
   getShippingCheckout(){
     return this.shippingContactDetails;
   }
-
-  
+  setShippingToOrder(shippingMethod:string){
+    this.cart.SetShipping(shippingMethod);
+  }
+  getShipping(){
+    return this.cart.shipping;
+  }
   
 }

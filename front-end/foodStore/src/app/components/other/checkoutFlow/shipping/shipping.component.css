@@ -1,0 +1,36 @@
+.shipping{
+    width:600px;
+    margin:0 auto;
+}
+
+.title {
+    text-align: center;
+    padding-top: 30px;
+    padding-left: 40px;
+    font-size: 30px;
+    color:#4c4c4c;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+
+.checkbox{
+    text-align: left;
+    margin: 50px;
+}
+
+.subtitle {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.container {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+.container input {
+    position: absolute;
+    right: 0px;
+}
+

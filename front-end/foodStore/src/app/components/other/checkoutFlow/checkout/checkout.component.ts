@@ -19,6 +19,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSubmit() {
-    this.cartService.setSummaryStage();
+    this.cartService.setShippingStage();
   }
 }

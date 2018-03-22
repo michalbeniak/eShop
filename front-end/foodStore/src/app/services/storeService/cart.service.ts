@@ -6,6 +6,7 @@ import { ProductsList } from '../../models/products-list';
 export class CartService {
 
   //productArray =  Array<Product>();
+  shipping:string;
   array:object[];
   productArray =  new ProductsList(this.array);
   count = 0;
@@ -19,5 +20,9 @@ export class CartService {
   test(){
     console.log(this.productArray);
 
+  }
+
+  SetShipping(shipping:string){
+    this.shipping = shipping;
   }
 }

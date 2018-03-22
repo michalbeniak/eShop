@@ -7,11 +7,12 @@ import { AppComponent } from '../../app.component';
 import { HomeComponentComponent } from '../../components/main/home-component/home-component.component';
 import { ProductDetailComponentComponent } from '../../components/main/product-detail-component/product-detail-component.component';
 import { ShopComponentComponent } from '../../components/main/shop-component/shop-component.component';
+import { CartService } from '../storeService/cart.service';
 
 @Injectable()
 export class CommunicatorService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cart: CartService) { }
 
 
   passData(productDetailComponent:ProductDetailComponentComponent, id:string) {
@@ -49,10 +50,12 @@ export class CommunicatorService {
 
   saveOrder(contactDetails, productArray) {
     let contactDetailsJson = JSON.parse(JSON.stringify(contactDetails));
-    let productArrayJson =JSON.parse(JSON.stringify(productArray))
+    let productArrayJson =JSON.parse(JSON.stringify(productArray));
+    let shippingJson = JSON.parse(JSON.stringify(this.cart.shipping));
     let order ={
       "contactDetails":contactDetailsJson,
-      "productsArray":productArrayJson
+      "productsArray":productArrayJson,
+      "shipping":shippingJson
     };
 
     const myheader = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
