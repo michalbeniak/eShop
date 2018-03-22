@@ -4,14 +4,30 @@
   <div class="options">
       <p class="subtitle">Free</p>
       <div class="checkbox">
-          <label class="container"> <span>Australian Standard delivery</span> 
+          <label class="container"> 
+            <div>
+                <p class="name">
+                  <span>Australian Standard delivery</span><span class="price">FREE</span>
+                </p>
+                <p class="delivery">Delivery Between</p>
+                <p class="delivery">Fri 10 Jul - Tue 14 Jul</p>
+
+            </div>
+
               <input id="standard" type="checkbox" checked="checked" (change)="clearOthers($event, 'standard')">
               <span class="checkmark"></span>
           </label>
       </div>
 
       <div class="checkbox">
-          <label class="container">Store pick-up
+          <label class="container">
+            <div>
+                <p class="name">
+                    <span>Store pick-up</span>  <span class="price">FREE</span>
+                  </p>
+                  <p class="delivery">Delivery Between</p>
+                  <p class="delivery">Fri 10 Jul - Tue 14 Jul</p>
+            </div> 
               <input id="store" type="checkbox" checked="checked" (change)="clearOthers($event, 'store')">
               <span class="checkmark"></span>
           </label>
@@ -19,14 +35,29 @@
 
       <p class="subtitle">Faster</p>
       <div class="checkbox">
-          <label class="container">Next day delivery 10AUD
+          <label class="container">
+              <div>
+                  <p class="name">
+                      <span>Next day delivery</span>  <span class="price">10AUD</span>
+                    </p>
+                    <p class="delivery">Delivery On</p>
+                    <p class="delivery">Fri 10</p>
+                    <p class="delivery">Get your order the next working day.</p>
+              </div>  
               <input id="next"  type="checkbox" checked="checked" (change)="clearOthers($event, 'next')">
               <span class="checkmark"></span>
           </label>
       </div>
 
       <div class="checkbox">
-          <label class="container">Choose your delivery day 10AUD
+          <label class="container"> 
+              <div>
+                  <p class="name">
+                      <span>Choose your delivery day</span>  <span class="price">11AUD</span>
+                    </p>
+                    <p class="delivery">Choose your day - Incl. Weekends</p>
+                    <p class="delivery">Choose a day to suit you - 7 days a week</p>
+              </div>  
               <input id="specific"  type="checkbox" checked="checked" (change)="clearOthers($event, 'specific')">
               <span class="checkmark"></span>
           </label>
