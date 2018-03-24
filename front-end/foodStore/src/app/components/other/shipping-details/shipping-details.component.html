@@ -1,0 +1,21 @@
+<div *ngIf="shippingStage == 'standard'">
+  <p class="name"><span>Australian Standard delivery</span><span class="price">FREE</span></p>
+  <p class="delivery">Delivery Between</p>
+  <p class="delivery">Fri 10 Jul - Tue 14 Jul</p>
+</div>
+<div *ngIf="shippingStage == 'store'">
+  <p class="name"><span>Store pick-up</span>  <span class="price">FREE</span></p>
+  <p class="delivery">Delivery Between</p>
+  <p class="delivery">Fri 10 Jul - Tue 14 Jul</p>
+</div>
+<div *ngIf="shippingStage == 'next'">
+  <p class="name"><span>Next day delivery</span>  <span class="price">10AUD</span></p>
+  <p class="delivery">Delivery On</p>
+  <p class="delivery">Fri 10</p>
+  <p class="delivery">Get your order the next working day.</p>
+</div>
+<div *ngIf="shippingStage == 'specific'">
+  <p class="name"><span>Choose your delivery day</span>  <span class="price">11AUD</span></p>
+  <p class="delivery">Choose your day - Incl. Weekends</p>
+  <p class="delivery">Choose a day to suit you - 7 days a week</p>
+</div>

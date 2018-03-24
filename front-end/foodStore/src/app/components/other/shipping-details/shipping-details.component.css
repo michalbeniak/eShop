@@ -1,0 +1,15 @@
+.name{
+    font-size: 16px;
+    margin: 0;
+    position:relative;
+    font-weight: bold;
+}
+.delivery{
+    font-size: 16px;
+    margin: 0;
+}
+
+.price {
+    position: absolute;
+    right: 100px;
+}

@@ -17,7 +17,7 @@
 }
 
 .detailsTable {
-    margin: 50px auto;
+    margin: 50px;
 }
 
 .detailsTable td {
@@ -34,6 +34,7 @@
     display: inline-block;
     margin-left: 50px;
     margin-top: 10px;
+    width: 100%;
 }
 
 .paymentInfo{
@@ -47,8 +48,8 @@
 
 .total {
     text-align: right;  
-    border-top: 1px solid;
     margin-top: 40px;
+    margin-right: 50px;
 }
 
 .btnWrapper {
@@ -86,4 +87,8 @@
     height: 50px;
     width: 100px;
     font-size: 18px;
+}
+
+.totalBorder{
+    border-top: 1px solid;
 }

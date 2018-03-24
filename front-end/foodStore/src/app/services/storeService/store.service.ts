@@ -13,6 +13,7 @@ export class StoreService {
   productArray =  new ProductsList(this.array);
   count = 0;
   order:Order = new Order();
+  shippingPrice:number;
   contactDetails:ContactDetails = new ContactDetails("","","","","","","","","")
   shippingContactDetails:ContactDetails = new ContactDetails("","","","","","","","","")
   constructor() { }

@@ -55,9 +55,7 @@
   <div class="shipMethod">
       <h3>Shipping Method</h3>
       <div class="shipDetails">
-          <p><strong>1 SHIPMENT</strong></p>
-          <p>Shipment 1: standard (1-3 weeks)</p>
-          <p>Ships in 1-5 bussiness bay.additional processing time required.</p>
+          <app-shipping-details [shippingStage] = "this.cartService.getShippingMethod()"></app-shipping-details>
       </div>
 
   </div>
@@ -69,9 +67,12 @@
     </div>
 
   </div>
-  <div class="total">
-    <h3>Total</h3>
-    <p>{{cartService.getTotalAmmount()}}$</p>
+  <div class="totalBorder">
+    <div class="total">
+      <h3>Total</h3>
+      <p>{{cartService.getTotalAmmount()}}$</p>
+    </div>
+    
   </div>
   <div class="btnWrapper">
       <button (click)= "goToShippingStage()" class="button backBtn">BACK</button>

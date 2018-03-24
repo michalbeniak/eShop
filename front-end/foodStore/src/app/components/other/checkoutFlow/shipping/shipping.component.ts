@@ -61,6 +61,7 @@ export class ShippingComponent implements OnInit {
   setSummaryStage(){
     if (this.shipping){
       this.cartService.setSummaryStage();
+      this.cartService.setShippingPrice(this.shipping);
     }
     else{
       alert("NO TY SI ALE KOKOT. VED CHECKNI NIECO");
