@@ -1,7 +1,7 @@
 <a class="masterHref" (click)="showCart()">
   <div class= "myCart">
     <div>
-        <p class="itemNumb">{{cart.count}}</p>
+        <p class="itemNumb">{{reppository.count}}</p>
         <div class="iconIm"></div>
         <!--<img class="icon" src="https://png.icons8.com/android/50/ffffff/shopping-cart.png">-->
         <!--<img src="https://png.icons8.com/android/50/000000/shopping-cart.png">-->
@@ -27,7 +27,7 @@
             <td>Quantity</td>
             <td>Price</td>
           </tr>
-          <tr *ngFor="let item of cart.productArray.ProductsList">
+          <tr *ngFor="let item of reppository.productArray.ProductsList">
             <td>{{item.Name}}</td>
             <td>{{item.Quantity}}</td>
             <td>{{item.Price}}</td>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartServiceService } from '../../../services/cartService/cart-service.service';
-import { CartService } from '../../../services/storeService/cart.service';
+import { StoreService } from '../../../services/storeService/store.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class MyCartComponent implements OnInit {
   myCartOn:Boolean = false;
   productCount;
 
-  constructor(private cartService:CartServiceService, private cart:CartService) { }
+  constructor(private cartService:CartServiceService, private reppository:StoreService) { }
 
   ngOnInit() {
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartServiceService } from '../../../../services/cartService/cart-service.service';
-import { CartService } from '../../../../services/storeService/cart.service';
+import { StoreService } from '../../../../services/storeService/store.service';
 import { Product } from '../../../../models/product';
 import { ContactDetails } from '../../../../models/contact-details';
 import { CommunicatorService } from '../../../../services/communicator/communicator.service';
@@ -12,10 +12,13 @@ import { CommunicatorService } from '../../../../services/communicator/communica
 })
 export class SummaryComponent implements OnInit {
 
-  constructor(private cartService:CartServiceService, private repo:CartService, private communicator:CommunicatorService) { }
+  contactDetails:ContactDetails;
+
+  constructor(private cartService:CartServiceService, private reppository:StoreService, private communicator:CommunicatorService) { }
 
   ngOnInit() {
-
+    
+    this.contactDetails = this.cartService.getContactDetails();
     /*let test1 = new Product("Test1","This is very first description",25.47,"assets/testProductImages/First.jpg","d68afab0-f4d3-11e7-82e2-e0cb4e55c262",1);
     let test2 = new Product("Test2","This is very second description",37.99,"assets/testProductImages/Second.jpg","d682e2-e0cb4e55c262",2);
     let test3 = new Product("Test3","This is very third description",43.1,"assets/testProductImages/Third.jpg","d68afab0-f4d3-11e7b4e55c262",3);
@@ -31,7 +34,7 @@ export class SummaryComponent implements OnInit {
 
   saveOrder(){
 
-    this.communicator.saveOrder(this.cartService.contactDetails, this.repo.productArray);
+    this.communicator.saveOrder(this.cartService.getOrder());
   }
   goToShippingStage(){
     this.cartService.setShippingStage();

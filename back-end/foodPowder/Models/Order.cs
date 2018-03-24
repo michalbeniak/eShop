@@ -10,5 +10,6 @@ namespace foodPowder.Models
     {
         public ContactDetails contactDetails { get; set; }
         public ProductsArray productsArray { get; set; }
+        public Shipping shipping { get; set; }
     }
 }

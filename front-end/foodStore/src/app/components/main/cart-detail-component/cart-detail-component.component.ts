@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../models/product';
 import { CartServiceService } from '../../../services/cartService/cart-service.service';
-import { CartService } from '../../../services/storeService/cart.service';
 import { State } from '../../../models/state';
 
 @Component({
@@ -13,7 +12,7 @@ export class CartDetailComponentComponent implements OnInit {
   
 
 
-  constructor(private cart:CartService, private cartService:CartServiceService ) { }
+  constructor(private cartService:CartServiceService ) { }
 
   ngOnInit() {
   }

@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
-import { CartService } from '../storeService/cart.service';
+import { StoreService } from '../storeService/store.service';
 import { Product } from '../../models/product';
 import { indexDebugNode } from '@angular/core/src/debug/debug_node';
 import { State } from '../../models/state';
 import { ContactDetails } from '../../models/contact-details';
+import { Order } from '../../models/order';
 
 @Injectable()
 export class CartServiceService {
-  contactDetails:ContactDetails = new ContactDetails("","","","","","","","","")
-  shippingContactDetails:ContactDetails = new ContactDetails("","","","","","","","","")
+
   totalAmmount:number=0;
   state:State = new State("shipping");
-  constructor(private cart: CartService) { }
+  constructor(private reppository: StoreService) { }
 
   ngOnInit() {
   }
 
   getTotalAmmount() {
     let sum =0;
-    this.cart.productArray.ProductsList.forEach(element => { sum+= element.Price * element.Quantity   
+    this.reppository.productArray.ProductsList.forEach(element => { sum+= element.Price * element.Quantity   
     });
     this.totalAmmount = this.precisionRound(sum, 2);
     return this.precisionRound(sum,2);
@@ -27,16 +27,16 @@ export class CartServiceService {
 
   deleteFromCart(product:Product){
  
-    var indexToDelete = this.cart.productArray.ProductsList.indexOf(product, 0);
-    this.cart.count -= this.cart.productArray[indexToDelete].Quantity;
+    var indexToDelete = this.reppository.productArray.ProductsList.indexOf(product, 0);
+    this.reppository.count -= this.reppository.productArray[indexToDelete].Quantity;
     if (indexToDelete >= 0){
-        this.cart.productArray.ProductsList.splice(indexToDelete, 1);
+        this.reppository.productArray.ProductsList.splice(indexToDelete, 1);
     }
    
   }
 
   addToCart(product:Product ) {
-    this.cart.productArray.ProductsList.push(product);
+    this.reppository.productArray.ProductsList.push(product);
   }
 
   precisionRound(number, precision) {
@@ -60,17 +60,29 @@ export class CartServiceService {
   setPaymentStage(){
     this.state.Status = "payment";
   }
-  getCheckout(){
-    return this.contactDetails;
+  getContactDetails(){
+    return this.reppository.GetContactDetails();
   }
-  getShippingCheckout(){
-    return this.shippingContactDetails;
+  getShippingContactDetails(){
+    return this.reppository.GetShippingContactDetails();
   }
   setShippingToOrder(shippingMethod:string){
-    this.cart.SetShipping(shippingMethod);
+    this.reppository.SetShipping(shippingMethod);
   }
   getShipping(){
-    return this.cart.shipping;
+    return this.reppository.shipping;
+  }
+
+  getOrder(){
+    return this.reppository.order;
+  }
+
+  setContactDetails(){
+    this.reppository.order.contactDetails =this.reppository.contactDetails;
+  }
+
+  setProductList(){
+    this.reppository.order.productsArray =this.reppository.productArray;
   }
   
 }

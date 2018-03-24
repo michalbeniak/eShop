@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../../../models/product';
 import { CartServiceService } from '../../../../services/cartService/cart-service.service';
-import { CartService } from '../../../../services/storeService/cart.service';
+import { StoreService } from '../../../../services/storeService/store.service';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class ProductCartComponent implements OnInit {
   dataExist:boolean = true;
   total:number;
   pleaseDeleteMeEvent = new EventEmitter();
-  constructor(private cartService:CartServiceService, private cart: CartService) { }
+  constructor(private cartService:CartServiceService, private reppository: StoreService) { }
 
   ngOnInit() {
     this.total = this.precisionRound(this.product.Quantity * this.product.Price,2);
@@ -29,7 +29,7 @@ export class ProductCartComponent implements OnInit {
     this.cartService.getTotalAmmount();
     if (previous != this.product.Quantity) {
       let diff = this.product.Quantity - previous; 
-      this.cart.count += diff;
+      this.reppository.count += diff;
     }  
   }
 

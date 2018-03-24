@@ -28,7 +28,7 @@ import { ProductShopComponent } from './components/other/products/product-shop/p
 import { BlogComponentComponent } from './components/main/blog-component/blog-component.component';
 import { BlogComponent } from './components/other/blog/blog.component';
 import { CartServiceService } from './services/cartService/cart-service.service';
-import { CartService } from './services/storeService/cart.service';
+import { StoreService } from './services/storeService/store.service';
 import { ProductCartComponent } from './components/other/products/product-cart/product-cart.component';
 import { CheckoutComponent } from './components/other/checkoutFlow/checkout/checkout.component';
 import { CartBasketComponent } from './components/other/checkoutFlow/cart-basket/cart-basket.component';
@@ -88,7 +88,10 @@ const appRoutes: Routes = [
     ),
     HttpClientModule
   ],
-  providers: [CommunicatorService, CartServiceService,CartService],
+  providers: [
+    CommunicatorService, 
+    CartServiceService,
+    StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

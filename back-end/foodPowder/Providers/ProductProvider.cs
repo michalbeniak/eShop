@@ -64,8 +64,8 @@ namespace foodPowder.Providers
 
             string insertContactCommand = string.Format("INSERT INTO meatpowder.orders(" +
                             "FirstName, LastName, Email, NumberTel, Street, " +
-                            "NumberHouse, City, ZipCode, Country, OrderID, Total) " +
-                    "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}');",
+                            "NumberHouse, City, ZipCode, Country, OrderID,ShippingMethod, Total) " +
+                    "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}','{10}', '{11}');",
                     order.contactDetails.FirstName,
                     order.contactDetails.LastName,
                     order.contactDetails.Email,
@@ -76,6 +76,7 @@ namespace foodPowder.Providers
                     order.contactDetails.ZipCode,
                     order.contactDetails.Country,
                     orderGuid.ToString(),
+                    order.shipping.Method,
                     order.productsArray.GetTotal());
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../../models/product';
-import { CartService } from '../../../../services/storeService/cart.service';
+import { StoreService } from '../../../../services/storeService/store.service';
 import { CartServiceService } from '../../../../services/cartService/cart-service.service';
 
 @Component({
@@ -11,11 +11,15 @@ import { CartServiceService } from '../../../../services/cartService/cart-servic
 export class CartBasketComponent implements OnInit {
   products: Product[];
   
-  constructor(private cart:CartService, private cartService:CartServiceService) { }
+  constructor(private reppository:StoreService, private cartService:CartServiceService) { }
 
   ngOnInit() {
-    this.products = this.cart.productArray.ProductsList;
+    this.products = this.reppository.productArray.ProductsList;
     this.cartService.getTotalAmmount();
   }
+  setCheckoutStage(){
+    this.cartService.setProductList();
+    this.cartService.setCheckoutStage()
 
+  }
 }

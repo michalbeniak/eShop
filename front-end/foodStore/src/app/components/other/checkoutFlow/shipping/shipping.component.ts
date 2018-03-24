@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartServiceService } from '../../../../services/cartService/cart-service.service';
-import { CartService } from '../../../../services/storeService/cart.service';
+import { StoreService } from '../../../../services/storeService/store.service';
 
 @Component({
   selector: 'app-shipping',
@@ -10,7 +10,7 @@ import { CartService } from '../../../../services/storeService/cart.service';
 export class ShippingComponent implements OnInit {
 
   shipping:string;
-  constructor(private cartService:CartServiceService, private repo:CartService) { }
+  constructor(private cartService:CartServiceService, private reppository:StoreService) { }
 
   ngOnInit() {
     this.SetClearCheckboxes();
@@ -46,13 +46,14 @@ export class ShippingComponent implements OnInit {
   setShipping(){
     if (this.shipping != null){
         this.cartService.setShippingToOrder(this.shipping);
+        this.reppository.order.shipping =this.reppository.shipping;
     }
   }
 
   SetCheckedIfAny() {
     let shipping = this.cartService.getShipping();
     if(shipping != null){
-      let checkbox = document.getElementById(shipping) as HTMLInputElement;
+      let checkbox = document.getElementById(shipping.Method) as HTMLInputElement;
       checkbox.checked=true;
     }
   }

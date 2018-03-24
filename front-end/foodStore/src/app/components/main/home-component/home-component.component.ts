@@ -15,7 +15,6 @@ export class HomeComponentComponent implements OnInit {
   constructor(private communicatorService:CommunicatorService, private cartService: CartServiceService) { }
 
   ngOnInit() {
-    //this.communicatorService.passData(this);
     this.communicatorService.passFirstThreeData(this);
   }
 

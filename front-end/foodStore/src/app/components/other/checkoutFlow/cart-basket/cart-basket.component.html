@@ -1,7 +1,7 @@
 <div class="cartDetail">
 
   <div class="beforePart">
-    <p class="title">My Cart({{cart.count}})</p>
+    <p class="title">My Cart({{reppository.count}})</p>
     <div class="rightMenu">
         <p class="price">Price</p>
         <p class="quantity">Quantity</p>
@@ -31,7 +31,7 @@
           <td>{{cartService.totalAmmount}}$</td>
         </tr>
       </table>
-      <button (click)= "this.cartService.setCheckoutStage()" class="button">CHECKOUT</button>
+      <button (click)= "setCheckoutStage()" class="button">CHECKOUT</button>
     </div>
   </div>
   

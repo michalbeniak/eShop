@@ -14,11 +14,12 @@ export class CheckoutComponent implements OnInit {
   constructor(private cartService:CartServiceService) { }
 
   ngOnInit() {
-    this.model=this.cartService.getCheckout();
-    this.modelShip=this.cartService.getShippingCheckout();
+    this.model=this.cartService.getContactDetails();
+    this.modelShip=this.cartService.getShippingContactDetails();
   }
 
   onSubmit() {
+    this.cartService.setContactDetails();
     this.cartService.setShippingStage();
   }
 }

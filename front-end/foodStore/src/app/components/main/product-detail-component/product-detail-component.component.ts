@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CommunicatorService } from '../../../services/communicator/communicator.service';
 import { MyCartComponent } from '../../other/my-cart/my-cart.component';
 import { CartServiceService } from '../../../services/cartService/cart-service.service';
-import { CartService } from '../../../services/storeService/cart.service';
+import { StoreService } from '../../../services/storeService/store.service';
 import { forEach } from '@angular/router/src/utils/collection';
 import { variable } from '@angular/compiler/src/output/output_ast';
 
@@ -23,7 +23,7 @@ export class ProductDetailComponentComponent implements OnInit {
     private communicatorService:CommunicatorService, 
     private activatedRoute: ActivatedRoute,
     private cartService: CartServiceService,
-    private cart: CartService) {
+    private reppository: StoreService) {
     this.productGuid = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(this.productGuid);
 
@@ -38,7 +38,7 @@ export class ProductDetailComponentComponent implements OnInit {
   }
 
   addToCart(){
-    this.cart.count += +this.quantity;
+    this.reppository.count += +this.quantity;
     if (!this.isAddedAlready(this.product)) {
       this.product.setQuantity(+this.quantity);
       this.cartService.addToCart(this.product);
@@ -49,7 +49,7 @@ export class ProductDetailComponentComponent implements OnInit {
   }
 
   isAddedAlready(productToAdd:Product) {
-    for ( let product of this.cart.productArray.ProductsList){
+    for ( let product of this.reppository.productArray.ProductsList){
       if (product.Guid ==  productToAdd.Guid){
         return true;
       }
@@ -58,7 +58,7 @@ export class ProductDetailComponentComponent implements OnInit {
   }
 
   setQuantity(productToAdd:Product) {
-    for ( let product of this.cart.productArray.ProductsList){
+    for ( let product of this.reppository.productArray.ProductsList){
       if (product.Guid ==  productToAdd.Guid){    
         product.Quantity += +this.quantity;
 
